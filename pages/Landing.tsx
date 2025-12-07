@@ -79,7 +79,7 @@ export const Landing: React.FC<LandingProps> = ({ onLogin }) => {
                     ))}
                  </div>
                  <div className="mt-8 p-4 bg-foresight-sprint/10 rounded-xl border border-foresight-sprint/20">
-                   <p className="text-foresight-sprint text-sm font-mono">> AI Generating 4 trajectories...</p>
+                   <p className="text-foresight-sprint text-sm font-mono">&gt; AI Generating 4 trajectories...</p>
                  </div>
               </div>
             </div>

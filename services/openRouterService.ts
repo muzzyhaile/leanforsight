@@ -1,6 +1,6 @@
 import { Scenario, StrategyResult, ScenarioType } from "../types";
 
-const OPENROUTER_API_KEY = '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';
+const OPENROUTER_API_KEY = import.meta.env.VITE_OPENROUTER_API_KEY || '';
 const OPENROUTER_BASE_URL = 'https://openrouter.ai/api/v1/chat/completions';
 
 interface OpenRouterMessage {

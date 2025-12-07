@@ -10,41 +10,41 @@ export const Landing: React.FC<LandingProps> = ({ onLogin }) => {
     <div className="bg-slate-950 min-h-screen text-slate-50 selection:bg-foresight-sprint selection:text-white overflow-hidden">
       
       {/* --- HERO SECTION --- */}
-      <section className="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+      <section className="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-4 pt-20 sm:pt-24 overflow-hidden">
         {/* Ambient Background Glows */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-foresight-sprint/20 rounded-full blur-[120px] animate-pulse-slow"></div>
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-foresight-creative/10 rounded-full blur-[100px]"></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-foresight-ram/10 rounded-full blur-[100px]"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] bg-foresight-sprint/20 rounded-full blur-[80px] sm:blur-[120px] animate-pulse-slow"></div>
+        <div className="absolute top-0 right-0 w-[200px] sm:w-[500px] h-[200px] sm:h-[500px] bg-foresight-creative/10 rounded-full blur-[60px] sm:blur-[100px]"></div>
+        <div className="absolute bottom-0 left-0 w-[200px] sm:w-[500px] h-[200px] sm:h-[500px] bg-foresight-ram/10 rounded-full blur-[60px] sm:blur-[100px]"></div>
 
-        <div className="relative z-10 max-w-5xl mx-auto space-y-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md animate-fade-in-up">
+        <div className="relative z-10 max-w-5xl mx-auto space-y-6 sm:space-y-8">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md animate-fade-in-up">
             <span className="w-2 h-2 rounded-full bg-foresight-strategy animate-pulse"></span>
-            <span className="text-sm font-medium text-slate-300 tracking-wide">Foresight RAM Methodology v2.0</span>
+            <span className="text-xs sm:text-sm font-medium text-slate-300 tracking-wide">Foresight RAM Methodology v2.0</span>
           </div>
           
-          <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-[1.1] animate-fade-in-up delay-100">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter leading-[1.1] animate-fade-in-up delay-100">
             Future-Proof <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-foresight-sprint via-foresight-creative to-foresight-strategy">
               Your Strategy.
             </span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed font-light animate-fade-in-up delay-200">
+          <p className="text-base sm:text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed font-light animate-fade-in-up delay-200 px-2">
             Turn uncertainty into your competitive advantage. <br className="hidden md:block"/>
             The first AI-powered tool for <span className="text-slate-100 font-medium">Scenario Sprints</span> & <span className="text-slate-100 font-medium">Continuous Validation</span>.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8 animate-fade-in-up delay-300">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-6 sm:pt-8 animate-fade-in-up delay-300">
             <button 
               onClick={onLogin}
-              className="group relative px-8 py-5 bg-white text-slate-950 rounded-2xl font-bold text-lg hover:scale-105 transition-all duration-300 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]"
+              className="group relative w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-5 bg-white text-slate-950 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg hover:scale-105 transition-all duration-300 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]"
             >
               Start Scenario Sprint
-              <span className="absolute inset-0 rounded-2xl ring-2 ring-white/20 group-hover:ring-white/40 transition-all"></span>
+              <span className="absolute inset-0 rounded-xl sm:rounded-2xl ring-2 ring-white/20 group-hover:ring-white/40 transition-all"></span>
             </button>
             <button 
               onClick={() => document.getElementById('methodology')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-8 py-5 text-slate-300 font-medium hover:text-white transition-colors flex items-center gap-2"
+              className="px-6 sm:px-8 py-3 sm:py-5 text-slate-300 font-medium hover:text-white transition-colors flex items-center gap-2"
             >
               Learn the Methodology <IconChevronDown className="w-4 h-4" />
             </button>
@@ -54,7 +54,7 @@ export const Landing: React.FC<LandingProps> = ({ onLogin }) => {
 
 
       {/* --- METHODOLOGY SECTION --- */}
-      <div id="methodology" className="relative py-32 space-y-32">
+      <div id="methodology" className="relative py-16 sm:py-32 space-y-16 sm:space-y-32">
         
         {/* Phase 1: Scenario Sprints (Purple) */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative group">
@@ -84,15 +84,15 @@ export const Landing: React.FC<LandingProps> = ({ onLogin }) => {
               </div>
             </div>
             
-            <div className="order-1 lg:order-2 space-y-8">
-              <div className="inline-block px-4 py-1 rounded-full border border-foresight-sprint text-foresight-sprint text-xs font-bold uppercase tracking-widest">
+            <div className="order-1 lg:order-2 space-y-4 sm:space-y-8">
+              <div className="inline-block px-3 sm:px-4 py-1 rounded-full border border-foresight-sprint text-foresight-sprint text-xs font-bold uppercase tracking-widest">
                 Phase 01
               </div>
-              <h2 className="text-4xl md:text-6xl font-bold">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold">
                 The Scenario <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-500">Sprint.</span>
               </h2>
-              <p className="text-xl text-slate-400 leading-relaxed">
+              <p className="text-base sm:text-xl text-slate-400 leading-relaxed">
                 Move beyond linear thinking. We use AI to instantly generate the <span className="text-white">Foresight RAM</span> quadrants: Best, Worst, Preferred, and Plausible scenarios.
               </p>
               <ul className="space-y-4">
@@ -114,15 +114,15 @@ export const Landing: React.FC<LandingProps> = ({ onLogin }) => {
            <div className="absolute inset-0 bg-foresight-strategy/5 blur-[100px] -z-10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div className="inline-block px-4 py-1 rounded-full border border-foresight-strategy text-foresight-strategy text-xs font-bold uppercase tracking-widest">
+            <div className="space-y-4 sm:space-y-8">
+              <div className="inline-block px-3 sm:px-4 py-1 rounded-full border border-foresight-strategy text-foresight-strategy text-xs font-bold uppercase tracking-widest">
                 Phase 02
               </div>
-              <h2 className="text-4xl md:text-6xl font-bold">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold">
                 Strategic <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-500">Integration.</span>
               </h2>
-              <p className="text-xl text-slate-400 leading-relaxed">
+              <p className="text-base sm:text-xl text-slate-400 leading-relaxed">
                 Connect the future to the present. We define your "North Star" customer goal and integrate it into the scenarios to build a resilient strategy.
               </p>
               <div className="flex gap-4">
@@ -199,15 +199,15 @@ export const Landing: React.FC<LandingProps> = ({ onLogin }) => {
                </div>
             </div>
 
-            <div className="order-1 lg:order-2 space-y-8">
-              <div className="inline-block px-4 py-1 rounded-full border border-foresight-creative text-foresight-creative text-xs font-bold uppercase tracking-widest">
+            <div className="order-1 lg:order-2 space-y-4 sm:space-y-8">
+              <div className="inline-block px-3 sm:px-4 py-1 rounded-full border border-foresight-creative text-foresight-creative text-xs font-bold uppercase tracking-widest">
                 Phase 03
               </div>
-              <h2 className="text-4xl md:text-6xl font-bold">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold">
                 Continuous <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-500">Validation.</span>
               </h2>
-              <p className="text-xl text-slate-400 leading-relaxed">
+              <p className="text-base sm:text-xl text-slate-400 leading-relaxed">
                 Strategies shouldn't be static. We monitor the delta between the "Plausible" baseline and your "Preferred" outcome. If you drift, we trigger creative interventions.
               </p>
               <div className="grid grid-cols-2 gap-4">
@@ -227,20 +227,20 @@ export const Landing: React.FC<LandingProps> = ({ onLogin }) => {
       </div>
 
       {/* --- CTA FOOTER --- */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="py-16 sm:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent pointer-events-none"></div>
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <h2 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight">
+          <h2 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 sm:mb-8 tracking-tight">
             Ready to <br/><span className="text-white">Lead the Market?</span>
           </h2>
-          <p className="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">
+          <p className="text-base sm:text-xl text-slate-400 mb-8 sm:mb-12 max-w-2xl mx-auto px-2">
             Stop reacting to change. Start designing it. Join the companies using LeanForesight to navigate uncertainty.
           </p>
           <button 
              onClick={onLogin}
-             className="px-10 py-5 bg-white text-slate-950 rounded-full font-bold text-xl hover:scale-105 transition-transform duration-300 shadow-2xl shadow-white/10 flex items-center gap-3 mx-auto"
+             className="px-8 sm:px-10 py-4 sm:py-5 bg-white text-slate-950 rounded-full font-bold text-base sm:text-xl hover:scale-105 transition-transform duration-300 shadow-2xl shadow-white/10 flex items-center gap-3 mx-auto"
            >
-            Get Started Now <IconArrowRight className="w-6 h-6" />
+            Get Started Now <IconArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
         </div>
       </section>

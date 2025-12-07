@@ -83,14 +83,14 @@ export const Dashboard: React.FC = () => {
 
   // Step 1: Input Topic
   const renderStep1 = () => (
-    <div className="max-w-2xl mx-auto bg-white p-10 rounded-2xl shadow-sm border border-slate-200">
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold text-slate-900 mb-2">1. Strategic Question</h2>
-        <p className="text-slate-500">What is the core uncertainty or strategic development question for your product or company?</p>
+    <div className="max-w-2xl mx-auto bg-white p-6 sm:p-10 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200">
+      <div className="mb-6 sm:mb-8">
+        <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">1. Strategic Question</h2>
+        <p className="text-sm sm:text-base text-slate-500">What is the core uncertainty or strategic development question for your product or company?</p>
       </div>
       <label className="block text-sm font-medium text-slate-700 mb-2">Topic / Question</label>
       <textarea
-        className="w-full bg-white text-slate-900 border border-slate-300 rounded-lg p-4 focus:ring-2 focus:ring-foresight-sprint focus:outline-none min-h-[120px]"
+        className="w-full bg-white text-slate-900 border border-slate-300 rounded-lg p-3 sm:p-4 focus:ring-2 focus:ring-foresight-sprint focus:outline-none min-h-[100px] sm:min-h-[120px] text-sm sm:text-base"
         placeholder="e.g., How will Artificial Intelligence impact our digital marketing agency's business model over the next 5 years?"
         value={project.data.topic}
         onChange={(e) => updateProjectData({ topic: e.target.value })}
@@ -98,7 +98,7 @@ export const Dashboard: React.FC = () => {
       <button
         disabled={loading || !project.data.topic}
         onClick={handleGenerateScenarios}
-        className="mt-6 w-full bg-slate-900 text-white py-3 rounded-lg font-medium hover:bg-slate-800 disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center gap-2"
+        className="mt-4 sm:mt-6 w-full bg-slate-900 text-white py-3 rounded-lg font-medium hover:bg-slate-800 disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center gap-2 text-sm sm:text-base"
       >
         {loading ? <><IconLoader className="w-5 h-5" /> Thinking...</> : 'Generate Scenarios'}
       </button>
@@ -118,17 +118,17 @@ export const Dashboard: React.FC = () => {
 
     return (
       <div className="max-w-6xl mx-auto">
-        <div className="mb-8 text-center">
-          <h2 className="text-3xl font-bold text-slate-900">Scenario Sprint Results</h2>
-          <p className="text-slate-500 mt-2">The AI has mapped 4 possible futures based on your question.</p>
+        <div className="mb-6 sm:mb-8 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">Scenario Sprint Results</h2>
+          <p className="text-sm sm:text-base text-slate-500 mt-2">The AI has mapped 4 possible futures based on your question.</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-12">
           {project.data.scenarios.map((s, idx) => (
-            <div key={idx} className={`p-6 rounded-xl border-t-4 shadow-sm ${getColor(s.type)}`}>
+            <div key={idx} className={`p-4 sm:p-6 rounded-xl border-t-4 shadow-sm ${getColor(s.type)}`}>
               <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">{s.type}</div>
-              <h3 className="font-bold text-lg text-slate-900 mb-3 leading-tight">{s.title}</h3>
-              <p className="text-sm text-slate-600 mb-4">{s.description}</p>
+              <h3 className="font-bold text-base sm:text-lg text-slate-900 mb-2 sm:mb-3 leading-tight">{s.title}</h3>
+              <p className="text-xs sm:text-sm text-slate-600 mb-3 sm:mb-4">{s.description}</p>
               <div className="space-y-2">
                 {s.indicators.slice(0, 2).map((ind, i) => (
                   <div key={i} className="flex items-start gap-2 text-xs text-slate-500">
@@ -141,12 +141,12 @@ export const Dashboard: React.FC = () => {
           ))}
         </div>
 
-        <div className="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-          <h2 className="text-xl font-bold text-slate-900 mb-4">Define Customer Goal</h2>
-          <p className="text-sm text-slate-500 mb-4">To bridge these scenarios into a strategy, we need to know the specific goal or "North Star" for the customer/business.</p>
+        <div className="max-w-2xl mx-auto bg-white p-5 sm:p-8 rounded-xl sm:rounded-2xl shadow-sm border border-slate-200">
+          <h2 className="text-lg sm:text-xl font-bold text-slate-900 mb-3 sm:mb-4">Define Customer Goal</h2>
+          <p className="text-xs sm:text-sm text-slate-500 mb-3 sm:mb-4">To bridge these scenarios into a strategy, we need to know the specific goal or "North Star" for the customer/business.</p>
           <input 
             type="text"
-            className="w-full bg-white text-slate-900 border border-slate-300 rounded-lg p-3 focus:ring-2 focus:ring-foresight-strategy focus:outline-none mb-4"
+            className="w-full bg-white text-slate-900 border border-slate-300 rounded-lg p-3 focus:ring-2 focus:ring-foresight-strategy focus:outline-none mb-4 text-sm sm:text-base"
             placeholder="e.g., Become the leading provider of ethical AI marketing tools in Europe."
             value={project.data.goal}
             onChange={(e) => updateProjectData({ goal: e.target.value })}
@@ -171,28 +171,28 @@ export const Dashboard: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         
         {/* Navigation Tabs */}
-        <div className="flex border-b border-slate-200 mb-8">
-           <button className="px-6 py-3 border-b-2 border-foresight-strategy text-foresight-strategy font-bold">Strategy & Persona</button>
+        <div className="flex border-b border-slate-200 mb-6 sm:mb-8 overflow-x-auto">
+           <button className="px-4 sm:px-6 py-3 border-b-2 border-foresight-strategy text-foresight-strategy font-bold text-sm sm:text-base whitespace-nowrap">Strategy & Persona</button>
            <button 
-             className="px-6 py-3 text-slate-500 hover:text-slate-700"
+             className="px-4 sm:px-6 py-3 text-slate-500 hover:text-slate-700 text-sm sm:text-base whitespace-nowrap"
              onClick={() => { setStep(5); saveProject({currentStep: 5}); }} 
            >
              Creative Monitor
            </button>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
           {/* Persona Column */}
           <div className="lg:col-span-1">
-             <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 sticky top-24">
-               <div className="flex items-center gap-3 mb-6">
-                 <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-2xl">👤</div>
+             <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm border border-slate-200 lg:sticky lg:top-24">
+               <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-slate-100 rounded-full flex items-center justify-center text-xl sm:text-2xl">👤</div>
                  <div>
-                   <h3 className="font-bold text-slate-900">{project.data.strategy.persona.name}</h3>
-                   <p className="text-sm text-slate-500">{project.data.strategy.persona.role}</p>
+                   <h3 className="font-bold text-slate-900 text-sm sm:text-base">{project.data.strategy.persona.name}</h3>
+                   <p className="text-xs sm:text-sm text-slate-500">{project.data.strategy.persona.role}</p>
                  </div>
                </div>
-               <p className="text-sm text-slate-600 italic mb-6">"{project.data.strategy.persona.description}"</p>
+               <p className="text-xs sm:text-sm text-slate-600 italic mb-4 sm:mb-6">"{project.data.strategy.persona.description}"</p></p>
                
                <div className="mb-4">
                  <h4 className="text-xs font-bold uppercase text-slate-400 mb-2">Goals</h4>
@@ -215,28 +215,28 @@ export const Dashboard: React.FC = () => {
           </div>
 
           {/* Strategy Roadmap */}
-          <div className="lg:col-span-2 space-y-6">
-            <h2 className="text-2xl font-bold text-slate-900">Strategic Recommendations</h2>
-            <p className="text-slate-500">Action plan to shift from the Plausible baseline to the Preferred future.</p>
+          <div className="lg:col-span-2 space-y-4 sm:space-y-6">
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-900">Strategic Recommendations</h2>
+            <p className="text-sm sm:text-base text-slate-500">Action plan to shift from the Plausible baseline to the Preferred future.</p>
             
-            <div className="bg-amber-50 border border-amber-200 p-4 rounded-lg text-amber-900 text-sm mb-6">
+            <div className="bg-amber-50 border border-amber-200 p-3 sm:p-4 rounded-lg text-amber-900 text-xs sm:text-sm mb-4 sm:mb-6">
                <strong>Risk Mitigation:</strong> {project.data.strategy.riskMitigation}
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               {project.data.strategy.recommendations.map((rec, idx) => (
-                <div key={idx} className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col md:flex-row gap-4">
-                  <div className="md:w-32 shrink-0 flex flex-col gap-2">
+                <div key={idx} className="bg-white p-4 sm:p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col sm:flex-row gap-3 sm:gap-4">
+                  <div className="sm:w-32 shrink-0 flex flex-row sm:flex-col gap-2">
                     <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium text-center
                       ${rec.timeframe === 'Immediate' ? 'bg-red-100 text-red-700' : 
                         rec.timeframe === 'Short-term' ? 'bg-yellow-100 text-yellow-700' : 'bg-green-100 text-green-700'}`}>
                       {rec.timeframe}
                     </span>
-                    <span className="text-xs text-slate-400 text-center uppercase font-bold tracking-wider">{rec.impact} Impact</span>
+                    <span className="text-xs text-slate-400 sm:text-center uppercase font-bold tracking-wider">{rec.impact} Impact</span>
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900 text-lg">{rec.title}</h3>
-                    <p className="text-slate-600 mt-1">{rec.description}</p>
+                    <h3 className="font-bold text-slate-900 text-base sm:text-lg">{rec.title}</h3>
+                    <p className="text-sm text-slate-600 mt-1">{rec.description}</p>
                   </div>
                 </div>
               ))}
@@ -263,27 +263,27 @@ export const Dashboard: React.FC = () => {
 
     return (
       <div className="max-w-7xl mx-auto">
-         <div className="flex border-b border-slate-200 mb-8">
+         <div className="flex border-b border-slate-200 mb-6 sm:mb-8 overflow-x-auto">
            <button 
-             className="px-6 py-3 text-slate-500 hover:text-slate-700"
+             className="px-4 sm:px-6 py-3 text-slate-500 hover:text-slate-700 text-sm sm:text-base whitespace-nowrap"
              onClick={() => setStep(4)}
            >
              Strategy & Persona
            </button>
-           <button className="px-6 py-3 border-b-2 border-foresight-creative text-foresight-creative font-bold">Creative Monitor</button>
+           <button className="px-4 sm:px-6 py-3 border-b-2 border-foresight-creative text-foresight-creative font-bold text-sm sm:text-base whitespace-nowrap">Creative Monitor</button>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2 bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-            <div className="flex justify-between items-center mb-6">
-              <h3 className="font-bold text-lg text-slate-900">Scenario Trajectory Monitor</h3>
-              <div className="flex gap-4 text-xs">
+        <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="lg:col-span-2 bg-white p-4 sm:p-6 rounded-xl border border-slate-200 shadow-sm">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0 mb-4 sm:mb-6">
+              <h3 className="font-bold text-base sm:text-lg text-slate-900">Scenario Trajectory Monitor</h3>
+              <div className="flex flex-wrap gap-3 sm:gap-4 text-xs">
                 <div className="flex items-center gap-1"><div className="w-3 h-3 bg-green-400 rounded-full"></div> Preferred</div>
                 <div className="flex items-center gap-1"><div className="w-3 h-3 bg-blue-500 rounded-full"></div> Actual</div>
-                <div className="flex items-center gap-1"><div className="w-3 h-3 bg-slate-400 rounded-full"></div> Plausible (Base)</div>
+                <div className="flex items-center gap-1"><div className="w-3 h-3 bg-slate-400 rounded-full"></div> Plausible</div>
               </div>
             </div>
-            <div className="h-[400px] w-full">
+            <div className="h-[250px] sm:h-[400px] w-full">
               <ResponsiveContainer width="100%" height="100%">
                 <ComposedChart data={data}>
                   <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
@@ -300,21 +300,21 @@ export const Dashboard: React.FC = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-1 space-y-4">
-             <div className="bg-red-50 border border-red-100 p-6 rounded-xl">
-                <h3 className="text-red-800 font-bold flex items-center gap-2 mb-2">
+          <div className="lg:col-span-1 space-y-3 sm:space-y-4">
+             <div className="bg-red-50 border border-red-100 p-4 sm:p-6 rounded-xl">
+                <h3 className="text-red-800 font-bold flex items-center gap-2 mb-2 text-sm sm:text-base">
                   ⚠️ Deviation Alert
                 </h3>
-                <p className="text-red-700 text-sm">
+                <p className="text-red-700 text-xs sm:text-sm">
                   The current trajectory is deviating <strong>-30%</strong> from the Preferred Scenario path.
                 </p>
              </div>
 
-             <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-               <h3 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
-                 <IconBrain className="w-5 h-5 text-foresight-creative" /> Creative Interventions
+             <div className="bg-white p-4 sm:p-6 rounded-xl border border-slate-200 shadow-sm">
+               <h3 className="font-bold text-slate-900 mb-3 sm:mb-4 flex items-center gap-2 text-sm sm:text-base">
+                 <IconBrain className="w-4 h-4 sm:w-5 sm:h-5 text-foresight-creative" /> Creative Interventions
                </h3>
-               <p className="text-xs text-slate-500 mb-4">Recommended campaigns to steer back to Preferred Scenario:</p>
+               <p className="text-xs text-slate-500 mb-3 sm:mb-4">Recommended campaigns to steer back to Preferred Scenario:</p></p>
                
                <div className="space-y-3">
                  <div className="p-3 bg-slate-50 rounded-lg border border-slate-100 hover:border-foresight-creative transition-colors cursor-pointer">
@@ -334,22 +334,22 @@ export const Dashboard: React.FC = () => {
   }
 
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-8 bg-slate-50 min-h-screen">
+    <div className="py-6 sm:py-12 px-4 sm:px-6 lg:px-8 bg-slate-50 min-h-screen">
       {/* Header with Back Button */}
-      <div className="max-w-7xl mx-auto mb-6 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto mb-4 sm:mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
         <button 
           onClick={() => navigate('/projects')}
           className="text-slate-500 hover:text-slate-900 text-sm font-medium flex items-center gap-1"
         >
           &larr; Back to Projects
         </button>
-        <span className="text-sm font-bold text-slate-900 bg-white px-3 py-1 rounded-full shadow-sm border border-slate-200">
+        <span className="text-sm font-bold text-slate-900 bg-white px-3 py-1 rounded-full shadow-sm border border-slate-200 truncate max-w-[200px] sm:max-w-none">
            {project.name}
         </span>
       </div>
 
       {/* Step Indicator */}
-      <div className="max-w-4xl mx-auto mb-12">
+      <div className="max-w-4xl mx-auto mb-8 sm:mb-12">
         <div className="flex items-center justify-between relative">
           <div className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-1 bg-slate-200 -z-10"></div>
           {[1, 2, 3, 4].map((s) => {
@@ -357,14 +357,14 @@ export const Dashboard: React.FC = () => {
              // Adjusted visualization to keep 4 dots but track progress
              const isActive = step >= (s === 3 ? 4 : s === 4 ? 5 : s);
              return (
-              <div key={s} className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm transition-colors duration-500 border-4 border-slate-50
+              <div key={s} className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-bold text-xs sm:text-sm transition-colors duration-500 border-4 border-slate-50
                 ${isActive ? 'bg-slate-900 text-white' : 'bg-white text-slate-400 border-slate-200'}`}>
                 {s}
               </div>
             )
           })}
         </div>
-        <div className="flex justify-between mt-2 text-xs font-medium text-slate-500 uppercase tracking-wider px-2">
+        <div className="flex justify-between mt-2 text-[10px] sm:text-xs font-medium text-slate-500 uppercase tracking-wider px-0 sm:px-2">
           <span>Question</span>
           <span>Scenarios</span>
           <span>Strategy</span>

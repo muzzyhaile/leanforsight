@@ -192,7 +192,7 @@ export const Dashboard: React.FC = () => {
                    <p className="text-xs sm:text-sm text-slate-500">{project.data.strategy.persona.role}</p>
                  </div>
                </div>
-               <p className="text-xs sm:text-sm text-slate-600 italic mb-4 sm:mb-6">"{project.data.strategy.persona.description}"</p></p>
+               <p className="text-xs sm:text-sm text-slate-600 italic mb-4 sm:mb-6">"{project.data.strategy.persona.description}"</p>
                
                <div className="mb-4">
                  <h4 className="text-xs font-bold uppercase text-slate-400 mb-2">Goals</h4>
@@ -314,7 +314,7 @@ export const Dashboard: React.FC = () => {
                <h3 className="font-bold text-slate-900 mb-3 sm:mb-4 flex items-center gap-2 text-sm sm:text-base">
                  <IconBrain className="w-4 h-4 sm:w-5 sm:h-5 text-foresight-creative" /> Creative Interventions
                </h3>
-               <p className="text-xs text-slate-500 mb-3 sm:mb-4">Recommended campaigns to steer back to Preferred Scenario:</p></p>
+               <p className="text-xs text-slate-500 mb-3 sm:mb-4">Recommended campaigns to steer back to Preferred Scenario:</p>
                
                <div className="space-y-3">
                  <div className="p-3 bg-slate-50 rounded-lg border border-slate-100 hover:border-foresight-creative transition-colors cursor-pointer">

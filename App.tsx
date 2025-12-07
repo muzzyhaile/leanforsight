@@ -5,6 +5,7 @@ import { Landing } from './pages/Landing';
 import { Dashboard } from './pages/Dashboard';
 import { Auth } from './pages/Auth';
 import { ProjectList } from './pages/ProjectList';
+import { PasswordGate } from './components/PasswordGate';
 import { storageService } from './services/storageService';
 import { User } from './types';
 
@@ -30,24 +31,26 @@ const App: React.FC = () => {
   };
 
   return (
-    <Router>
-      <Layout isAuthenticated={!!user} onLogout={handleLogout}>
-        <Routes>
-          <Route path="/" element={
-            user ? <Navigate to="/projects" /> : <Landing onLogin={() => window.location.hash = '#auth'} />
-          } />
-          <Route path="/auth" element={
-             user ? <Navigate to="/projects" /> : <Auth onLogin={handleLogin} />
-          } />
-          <Route path="/projects" element={
-            user ? <ProjectList user={user} /> : <Navigate to="/auth" />
-          } />
-          <Route path="/project/:id" element={
-            user ? <Dashboard /> : <Navigate to="/auth" />
-          } />
-        </Routes>
-      </Layout>
-    </Router>
+    <PasswordGate>
+      <Router>
+        <Layout isAuthenticated={!!user} onLogout={handleLogout}>
+          <Routes>
+            <Route path="/" element={
+              user ? <Navigate to="/projects" /> : <Landing onLogin={() => window.location.hash = '#auth'} />
+            } />
+            <Route path="/auth" element={
+               user ? <Navigate to="/projects" /> : <Auth onLogin={handleLogin} />
+            } />
+            <Route path="/projects" element={
+              user ? <ProjectList user={user} /> : <Navigate to="/auth" />
+            } />
+            <Route path="/project/:id" element={
+              user ? <Dashboard /> : <Navigate to="/auth" />
+            } />
+          </Routes>
+        </Layout>
+      </Router>
+    </PasswordGate>
   );
 };
 

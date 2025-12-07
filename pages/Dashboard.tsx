@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { generateScenarios, generateStrategy } from '../services/geminiService';
+import { generateScenarios, generateStrategy } from '../services/openRouterService';
 import { Project, ScenarioType } from '../types';
 import { storageService } from '../services/storageService';
 import { IconLoader, IconCheck, IconTarget, IconBrain, IconArrowRight } from '../components/Icons';

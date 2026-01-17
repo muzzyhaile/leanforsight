@@ -59,14 +59,12 @@ export const Layout = ({ children, onLogout, isAuthenticated }) => {
       {!isLanding && (
         <footer className="bg-white border-t border-slate-200 py-8 sm:py-12">
           <div className="max-w-7xl mx-auto px-4 text-center text-slate-400 text-sm">
-            <p>© 2024 LeanForesight. Based on the RAM Methodology.</p>
           </div>
         </footer>
       )}
       {isLanding && (
         <footer className="bg-slate-950 border-t border-white/10 py-8 sm:py-12">
           <div className="max-w-7xl mx-auto px-4 text-center text-slate-500 text-sm">
-            <p>© 2024 LeanForesight. Based on the RAM Methodology.</p>
           </div>
         </footer>
       )}

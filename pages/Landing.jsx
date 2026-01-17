@@ -10,14 +10,10 @@ export const Landing = ({ onLogin }) => {
         <div className="absolute bottom-0 left-0 w-[200px] sm:w-[500px] h-[200px] sm:h-[500px] bg-foresight-ram/10 rounded-full blur-[60px] sm:blur-[100px]"></div>
 
         <div className="relative z-10 max-w-5xl mx-auto space-y-6 sm:space-y-8">
-          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md animate-fade-in-up">
-            <span className="w-2 h-2 rounded-full bg-foresight-strategy animate-pulse"></span>
-            <span className="text-xs sm:text-sm font-medium text-slate-300 tracking-wide">Foresight RAM Methodology v2.0</span>
-          </div>
 
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter leading-[1.1] animate-fade-in-up delay-100">
             Future-Proof <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-foresight-sprint via-foresight-creative to-foresight-strategy">
+            <span className="text-white">
               Your Strategy.
             </span>
           </h1>
